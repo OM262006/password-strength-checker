@@ -14,9 +14,12 @@ for char in password:
     if char in spcial_chars:
         has_spcial = True
 
-    
+    if char.isupper():
+        has_uppercase = True
 
-if length >= 8 and has_numbers and has_spcial:
+    start_with_letter = password[0].isupper() if length > 0 else False
+
+if length >= 8 and has_numbers and has_spcial and has_uppercase and start_with_letter:
     print("strong")
 else:
     print("weak")
